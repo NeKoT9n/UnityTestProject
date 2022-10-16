@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class ClickCatcher : MonoBehaviour
 {
-    public Action<Vector2> OnClick;
-
     private Camera _mainCamera;
+
+    public Action<Vector2> OnClick;
 
     private void Start()
     {
@@ -15,7 +15,6 @@ public class ClickCatcher : MonoBehaviour
     private void OnMouseDown()
     {
         Vector2 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log(mousePosition);
         OnClick?.Invoke(mousePosition);
     }
 }

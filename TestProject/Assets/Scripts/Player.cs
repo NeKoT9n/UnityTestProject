@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
         }
         if(collision.gameObject.TryGetComponent(out IDamageDealer dealer))
         {
-
             _hp -= dealer.Damage();
 
             if (_hp <= 0)
